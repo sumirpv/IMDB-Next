@@ -3,7 +3,7 @@ import { AiFillHome } from "react-icons/ai";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import MenuItem from "./MenuItem";
 import Link from "next/link";
-
+import SwitchTheme from "@/components/SwitchTheme";
 
 export default function Header() {
   return (
@@ -12,11 +12,14 @@ export default function Header() {
         <MenuItem title="home" Icon={AiFillHome} address="/" />
         <MenuItem title="about" Icon={BsFillInfoCircleFill} address="/about" />
       </div>
-      <Link className="flex gap-4 align-center" href={"/"}>
-        <span className="text-2xl font-bold bg-amber-500 rounded-lg py-1 px-2">
-          IMDB
-        </span>
-      </Link>
+      <div className="flex gap-4 items-center">
+        <SwitchTheme />
+        <Link className="flex gap-4 align-center" href={"/"}>
+          <span className="text-2xl font-bold bg-amber-500 rounded-lg py-1 px-2">
+            IMDB
+          </span>
+        </Link>
+      </div>
     </div>
   );
 }
